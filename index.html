@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hogar de Patitas</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div class="top-note">Cada patita merece un hogar. <strong>Adopta, no compres.</strong></div>
+
+  <!-- Encabezado -->
+  <header>
+    <nav class="nav container">
+      <a class="brand" href="#"><span class="brand-mark">🐾</span> hogar de patitas</a>
+      <div class="nav-actions">
+        <button class="btn btn-light" id="loginButton" type="button">Iniciar sesión</button>
+        <a class="btn btn-primary" href="#adopta">Encontrar compañero</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Presentación -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Una familia cambia una vida</div>
+          <h1>Tu próximo mejor amigo te espera.</h1>
+          <p class="hero-copy">Encuentra perros y gatos que buscan un hogar lleno de cariño.</p>
+          <a class="btn btn-primary" href="#adopta">Ver mascotas  </a>
+        </div>
+        <div class="hero-visual"><div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1100&q=85" alt="Perro feliz">
+        </div></div>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="adopt-section container" id="adopta">
+      <div class="section-heading">
+        <div><span class="section-kicker">Conoce a tus nuevos amigos</span><h2>Patitas que buscan hogar</h2></div>
+        <button class="btn btn-light" id="clearFilters" type="button">Limpiar filtros</button>
+      </div>
+      <div class="filter-panel"><div class="filter-row">
+        <div class="field search-field"><label for="searchInput">Nombre o raza</label><input id="searchInput" type="search" placeholder="Ej. Luna"></div>
+        <div class="field"><label for="speciesFilter">Animal</label><select id="speciesFilter"><option value="">Todos</option><option>Perro</option><option>Gato</option></select></div>
+        <div class="field"><label for="ageFilter">Edad</label><select id="ageFilter"><option value="">Todas</option><option>Cachorro</option><option>Joven</option><option>Adulto</option></select></div>
+      </div></div>
+      <p id="resultCount" aria-live="polite"></p>
+      <div class="pet-grid" id="petGrid"></div>
+    </section>
+  </main>
+
+  <!-- Pie de pagina -->
+  <footer class="footer" id="footer"><div class="container footer-inner">
+    <a class="brand" href="#"><span class="brand-mark">🐾</span> hogar de patitas</a>
+    <a href="https://wa.me/529932024243?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer">Contactar al administrador por WhatsApp</a>
+  </div></footer>
+
+ 
+  <div class="modal-backdrop" id="loginModal"><div class="modal">
+    <button class="modal-close" type="button" data-close aria-label="Cerrar">×</button>
+    <h2>Iniciar sesión</h2>
+    <form class="modal-form" id="loginForm">
+      <div class="field"><label for="userName">Nombre</label><input id="userName" required placeholder="¿Cómo te llamas?"></div>
+      <div class="field"><label for="userEmail">Correo</label><input id="userEmail" type="email" required placeholder="correo@ejemplo.com"></div>
+      <button class="btn btn-primary" type="submit">Entrar</button>
+    </form>
+  </div></div>
+
+  <div class="modal-backdrop" id="adoptionModal"><div class="modal">
+    <button class="modal-close" type="button" data-close aria-label="Cerrar">×</button>
+    <h2 id="adoptionTitle">Solicitud de adopción</h2>
+    <form class="modal-form" id="adoptionForm">
+      <div class="field"><label for="phone">Teléfono</label><input id="phone" type="tel" required></div>
+      <div class="field"><label for="motivation">¿Por qué quieres adoptar?</label><textarea id="motivation" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+    </form>
+  </div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
